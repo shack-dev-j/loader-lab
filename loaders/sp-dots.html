@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clockwork Fading Dots - Loader Lab</title>
+  <style>
+    /* Reset & Demo Centering Container */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #090d16;
+      color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      padding: 24px;
+    }
+    .demo-label {
+      margin-top: 24px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #94a3b8;
+      letter-spacing: 0.5px;
+    }
+
+    /* ======================================================
+       LOADER CSS BLOCK (Self-contained, customize variables)
+       ====================================================== */
+.sp-dots {
+  --size: 48px;
+  --color: #3b82f6;
+  width: var(--size);
+  height: var(--size);
+  position: relative;
+  box-sizing: border-box;
+}
+
+.sp-dots .dot {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 3px);
+  width: 6px;
+  height: 6px;
+  background-color: var(--color);
+  border-radius: 50%;
+  transform-origin: 3px calc(var(--size) / 2);
+  animation: spDotsFade 1.2s infinite ease-in-out;
+}
+
+.sp-dots .dot:nth-child(1) { transform: rotate(0deg); animation-delay: -1.05s; }
+.sp-dots .dot:nth-child(2) { transform: rotate(45deg); animation-delay: -0.9s; }
+.sp-dots .dot:nth-child(3) { transform: rotate(90deg); animation-delay: -0.75s; }
+.sp-dots .dot:nth-child(4) { transform: rotate(135deg); animation-delay: -0.6s; }
+.sp-dots .dot:nth-child(5) { transform: rotate(180deg); animation-delay: -0.45s; }
+.sp-dots .dot:nth-child(6) { transform: rotate(225deg); animation-delay: -0.3s; }
+.sp-dots .dot:nth-child(7) { transform: rotate(270deg); animation-delay: -0.15s; }
+.sp-dots .dot:nth-child(8) { transform: rotate(315deg); animation-delay: 0s; }
+
+@keyframes spDotsFade {
+  0%, 100% { opacity: 0.15; transform: scale(0.75); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sp-dots .dot {
+    animation: none;
+    opacity: 0.6;
+    transform: scale(1);
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- Clockwork Fading Dots (Spinners) -->
+  <div class="sp-dots" role="status" aria-label="Loading">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+  <p class="demo-label">Clockwork Fading Dots</p>
+</body>
+</html>

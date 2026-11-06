@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charging Power Cell - Loader Lab</title>
+  <style>
+    /* Reset & Demo Centering Container */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #090d16;
+      color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      padding: 24px;
+    }
+    .demo-label {
+      margin-top: 24px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #94a3b8;
+      letter-spacing: 0.5px;
+    }
+
+    /* ======================================================
+       LOADER CSS BLOCK (Self-contained, customize variables)
+       ====================================================== */
+.fun-battery {
+  --size: 60px;
+  --color: #10b981;
+  width: var(--size);
+  height: calc(var(--size) * 0.45);
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.fun-battery-body {
+  flex: 1;
+  height: 100%;
+  border: 3px solid var(--color);
+  border-radius: 6px;
+  padding: 3px;
+  display: flex;
+  gap: 3px;
+  box-sizing: border-box;
+}
+
+.fun-battery-tip {
+  width: 4px;
+  height: 45%;
+  background-color: var(--color);
+  border-radius: 0 3px 3px 0;
+  margin-left: 2px;
+}
+
+.fun-battery-cell {
+  flex: 1;
+  height: 100%;
+  background-color: var(--color);
+  border-radius: 2px;
+  opacity: 0.15;
+  animation: funBatteryCharge 1.6s ease-in-out infinite;
+}
+
+.fun-battery-cell:nth-child(1) { animation-delay: 0s; }
+.fun-battery-cell:nth-child(2) { animation-delay: 0.3s; }
+.fun-battery-cell:nth-child(3) { animation-delay: 0.6s; }
+.fun-battery-cell:nth-child(4) { animation-delay: 0.9s; }
+
+@keyframes funBatteryCharge {
+  0%, 100% { opacity: 0.15; transform: scaleY(0.9); }
+  50% { opacity: 1; transform: scaleY(1); box-shadow: 0 0 6px var(--color); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fun-battery-cell {
+    animation: none;
+    opacity: 0.85;
+    transform: none;
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- Charging Power Cell (Fun Loaders) -->
+  <div class="fun-battery" role="status" aria-label="Charging battery">
+  <div class="fun-battery-body">
+    <div class="fun-battery-cell"></div>
+    <div class="fun-battery-cell"></div>
+    <div class="fun-battery-cell"></div>
+    <div class="fun-battery-cell"></div>
+  </div>
+  <div class="fun-battery-tip"></div>
+</div>
+  <p class="demo-label">Charging Power Cell</p>
+</body>
+</html>

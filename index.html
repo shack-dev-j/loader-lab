@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loader Lab - 30 Original Pure CSS Loading Animations</title>
+  <meta name="description" content="A curated collection of 30 GPU-accelerated, responsive, pure HTML/CSS loaders. Controlled by CSS variables, zero dependencies, accessible, and ready for production.">
+
+  <!-- Consolidated Loaders CSS -->
+  <link rel="stylesheet" href="dist/loaders.css">
+  
+  <!-- Showcase Page UI Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <a href="#" class="brand">
+          <div class="brand-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+            </svg>
+          </div>
+          <div class="brand-title">
+            Loader<span>Lab</span>
+            <span class="brand-tag">Pure CSS</span>
+          </div>
+        </a>
+
+        <div class="header-actions">
+          <!-- Dark / Light Theme Toggle -->
+          <button id="themeToggleBtn" class="btn btn-icon" aria-label="Toggle dark/light theme" title="Toggle dark/light theme">
+            <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: none;">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg id="themeIconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
+          <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-sm" aria-label="View on GitHub">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">30 Smooth CSS Loading Animations</h1>
+      <p class="hero-subtitle">
+        One HTML block + one CSS block each. Zero frameworks, GPU-accelerated with <code>transform</code> and <code>opacity</code>, and customizable in seconds via CSS variables.
+      </p>
+
+      <div class="stats-bar" role="region" aria-label="Library statistics">
+        <div class="stat-item"><strong>30</strong> Loaders</div>
+        <div class="stat-item">•</div>
+        <div class="stat-item"><strong>10</strong> Progress Bars</div>
+        <div class="stat-item">•</div>
+        <div class="stat-item"><strong>10</strong> Spinners</div>
+        <div class="stat-item">•</div>
+        <div class="stat-item"><strong>5</strong> Skeletons</div>
+        <div class="stat-item">•</div>
+        <div class="stat-item"><strong>5</strong> Fun Loaders</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Controls Panel -->
+    <div class="controls-panel">
+      <div class="controls-row">
+        <!-- Filter Category Tabs -->
+        <div class="filter-tabs" role="tablist" aria-label="Filter loaders by group">
+          <button class="tab-btn active" role="tab" aria-selected="true" data-filter="all">All (30)</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-filter="progress">Progress Bars (10)</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-filter="spinner">Spinners (10)</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-filter="skeleton">Skeleton Screens (5)</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-filter="fun">Fun Loaders (5)</button>
+        </div>
+
+        <!-- Search Input -->
+        <div class="search-wrapper">
+          <label for="searchInput" class="search-label">Search loading animations</label>
+          <span class="search-icon" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <input type="search" id="searchInput" class="search-input" placeholder="Search loaders (e.g. orbit, pulse, card)..." autocomplete="off">
+        </div>
+      </div>
+
+      <!-- Live Customization Bar -->
+      <div class="tweak-bar">
+        <div class="tweak-group">
+          <label for="globalColorInput">Accent Tint:</label>
+          <input type="color" id="globalColorInput" class="color-picker-input" value="#3b82f6" title="Preview custom accent color across all loaders">
+          <button id="resetColorBtn" class="btn btn-sm" type="button" title="Reset to original colors">Reset</button>
+        </div>
+
+        <div class="tweak-group">
+          <label for="motionToggle">Motion:</label>
+          <select id="motionToggle" class="btn btn-sm" title="Simulate reduced motion">
+            <option value="normal">Full Motion (Normal)</option>
+            <option value="reduced">Prefers Reduced Motion</option>
+          </select>
+        </div>
+
+        <div class="tweak-group" style="margin-left: auto;">
+          <span id="matchCountText" style="font-weight: 600; font-size: 12px; color: var(--text-muted);">Showing 30 of 30</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loaders Grid -->
+    <div id="loadersGrid" class="loaders-grid" aria-live="polite">
+      <!-- Generated dynamically by app.js -->
+    </div>
+  </main>
+
+  <!-- Modal Inspector for Code Snippet & Live Variable Tweak -->
+  <div id="inspectorModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display: none;">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2 id="modalTitle" class="modal-title">Loader Details</h2>
+        <button id="modalCloseBtn" class="modal-close-btn" aria-label="Close dialog">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Live Preview Stage -->
+        <div id="modalPreviewStage" class="modal-preview-stage"></div>
+
+        <!-- Live Controls in Modal -->
+        <div class="modal-controls">
+          <div class="tweak-group">
+            <label for="modalColorPicker">Color (<code>--color</code>):</label>
+            <input type="color" id="modalColorPicker" class="color-picker-input">
+          </div>
+          <div class="tweak-group">
+            <label for="modalSizeInput">Size (<code>--size</code>):</label>
+            <input type="text" id="modalSizeInput" class="btn btn-sm" style="width: 80px;" placeholder="48px">
+          </div>
+          <button id="modalResetTweakBtn" class="btn btn-sm" type="button">Reset</button>
+          <a id="modalStandaloneLink" href="#" target="_blank" class="btn btn-sm" style="margin-left: auto;">Open Standalone File ↗</a>
+        </div>
+
+        <!-- Code Snippet Viewer -->
+        <div>
+          <div class="code-tabs">
+            <button class="code-tab-btn active" data-tab="html">HTML Snippet</button>
+            <button class="code-tab-btn" data-tab="css">CSS Block</button>
+          </div>
+          <div class="code-box-wrapper">
+            <div class="code-box-header">
+              <span id="modalCodeLang" class="code-box-lang">HTML</span>
+              <button id="modalCopyCodeBtn" class="btn btn-sm btn-primary">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                Copy HTML
+              </button>
+            </div>
+            <pre><code id="modalCodeDisplay" class="code-box"></code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastNotification" class="toast" role="status" aria-live="polite">
+    Copied to clipboard!
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>Loader Lab</strong> • Built with pure HTML5 and CSS3. 60 FPS GPU animations.</p>
+      <div class="footer-links">
+        <a href="LICENSE">MIT License</a>
+        <span>•</span>
+        <a href="README.md">Documentation</a>
+        <span>•</span>
+        <a href="dist/loaders.css" download>Download loaders.css</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
