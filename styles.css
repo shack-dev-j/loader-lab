@@ -217,49 +217,38 @@ select:focus-visible {
 
 /* Hero Section */
 .hero {
-  padding: 32px 0 24px;
+  padding: 40px 0 28px;
   text-align: center;
 }
 
+.hero-pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--accent);
+  background-color: var(--accent-light);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  margin-bottom: 16px;
+}
+
 .hero-title {
-  font-size: clamp(26px, 4vw, 40px);
-  font-weight: 900;
-  letter-spacing: -1px;
+  font-size: clamp(28px, 4.5vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
   margin-bottom: 12px;
   line-height: 1.15;
 }
 
 .hero-subtitle {
-  font-size: 16px;
+  font-size: 15px;
   color: var(--text-secondary);
-  max-width: 640px;
-  margin: 0 auto 24px;
-}
-
-.stats-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  font-size: 13px;
-  color: var(--text-secondary);
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  padding: 10px 20px;
-  border-radius: 9999px;
-  max-width: fit-content;
+  max-width: 580px;
   margin: 0 auto;
-}
-
-.stat-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.stat-item strong {
-  color: var(--accent);
+  line-height: 1.5;
 }
 
 /* Control Panel */

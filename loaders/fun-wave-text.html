@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kinetic Wave Text - Loader Lab</title>
+  <title>Wave Text - Loader Lab</title>
   <style>
-    /* Reset & Demo Centering Container */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -19,36 +18,31 @@
       justify-content: center;
       background: #090d16;
       color: #f8fafc;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       padding: 24px;
     }
     .demo-label {
       margin-top: 24px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
       color: #94a3b8;
-      letter-spacing: 0.5px;
     }
 
-    /* ======================================================
-       LOADER CSS BLOCK (Self-contained, customize variables)
-       ====================================================== */
 .fun-wave-text {
-  --size: 16px;
-  --color: #8b5cf6;
-  font-family: inherit;
+  --size: 14px;
+  --color: #a855f7;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: var(--size);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 2px;
   color: var(--color);
   display: flex;
   align-items: center;
-  box-sizing: border-box;
 }
 
 .fun-wave-text span {
   display: inline-block;
-  animation: funLetterWave 1.4s ease-in-out infinite;
+  animation: funLetter 1.4s ease-in-out infinite;
 }
 
 .fun-wave-text span:nth-child(1) { animation-delay: 0.0s; }
@@ -62,30 +56,22 @@
 .fun-wave-text span:nth-child(9) { animation-delay: 0.8s; }
 .fun-wave-text span:nth-child(10) { animation-delay: 0.9s; }
 
-@keyframes funLetterWave {
-  0%, 100% {
-    transform: translateY(0);
-    opacity: 0.5;
-  }
-  50% {
-    transform: translateY(-8px);
-    opacity: 1;
-    text-shadow: 0 4px 8px rgba(139, 92, 246, 0.4);
-  }
+@keyframes funLetter {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(-6px); opacity: 1; text-shadow: 0 0 6px var(--color); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .fun-wave-text span {
     animation: none;
     transform: none;
-    opacity: 0.9;
+    opacity: 0.85;
   }
 }
   </style>
 </head>
 <body>
-  <!-- Kinetic Wave Text (Fun Loaders) -->
-  <div class="fun-wave-text" role="status" aria-label="Loading text">
+  <div class="fun-wave-text" role="status" aria-label="Loading">
   <span>L</span>
   <span>O</span>
   <span>A</span>
@@ -97,6 +83,6 @@
   <span>.</span>
   <span>.</span>
 </div>
-  <p class="demo-label">Kinetic Wave Text</p>
+  <p class="demo-label">Wave Text</p>
 </body>
 </html>

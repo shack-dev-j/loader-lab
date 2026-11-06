@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Media Buffer Stream - Loader Lab</title>
+  <title>Buffer Stream - Loader Lab</title>
   <style>
-    /* Reset & Demo Centering Container */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -19,34 +18,29 @@
       justify-content: center;
       background: #090d16;
       color: #f8fafc;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       padding: 24px;
     }
     .demo-label {
       margin-top: 24px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
       color: #94a3b8;
-      letter-spacing: 0.5px;
     }
 
-    /* ======================================================
-       LOADER CSS BLOCK (Self-contained, customize variables)
-       ====================================================== */
 .pb-buffered-stream {
   --size: 240px;
   --color: #e11d48;
-  --track: rgba(225, 29, 72, 0.15);
-  --buf-color: rgba(225, 29, 72, 0.35);
-  --height: 6px;
+  --track: rgba(255, 255, 255, 0.08);
+  --buf-color: rgba(225, 29, 72, 0.3);
+  --height: 5px;
   width: var(--size);
   max-width: 100%;
   height: var(--height);
-  background-color: var(--track);
+  background: var(--track);
   border-radius: 9999px;
   position: relative;
   overflow: hidden;
-  box-sizing: border-box;
 }
 
 .pb-buf-preload {
@@ -54,11 +48,11 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 80%;
-  background-color: var(--buf-color);
+  width: 75%;
+  background: var(--buf-color);
   border-radius: 9999px;
   transform-origin: left center;
-  animation: pbBufPulse 2s ease-in-out infinite;
+  animation: pbPreload 2s ease-in-out infinite;
 }
 
 .pb-buf-play {
@@ -66,21 +60,21 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 45%;
-  background-color: var(--color);
+  width: 40%;
+  background: var(--color);
   border-radius: 9999px;
   transform-origin: left center;
-  animation: pbPlayStream 2.6s linear infinite;
+  animation: pbPlayhead 2.4s linear infinite;
 }
 
-@keyframes pbBufPulse {
-  0%, 100% { opacity: 0.5; transform: scaleX(0.7); }
-  50% { opacity: 0.9; transform: scaleX(0.85); }
+@keyframes pbPreload {
+  0%, 100% { opacity: 0.4; transform: scaleX(0.7); }
+  50% { opacity: 0.8; transform: scaleX(0.85); }
 }
 
-@keyframes pbPlayStream {
+@keyframes pbPlayhead {
   0% { transform: scaleX(0.1); }
-  60% { transform: scaleX(0.5); }
+  50% { transform: scaleX(0.45); }
   100% { transform: scaleX(0.8); }
 }
 
@@ -88,17 +82,16 @@
   .pb-buf-preload,
   .pb-buf-play {
     animation: none;
-    transform: scaleX(0.6);
+    transform: scaleX(0.5);
   }
 }
   </style>
 </head>
 <body>
-  <!-- Media Buffer Stream (Progress Bars) -->
   <div class="pb-buffered-stream" role="progressbar" aria-label="Media buffering">
   <div class="pb-buf-preload"></div>
   <div class="pb-buf-play"></div>
 </div>
-  <p class="demo-label">Media Buffer Stream</p>
+  <p class="demo-label">Buffer Stream</p>
 </body>
 </html>

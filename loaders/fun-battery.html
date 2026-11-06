@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Charging Power Cell - Loader Lab</title>
+  <title>Battery Cell - Loader Lab</title>
   <style>
-    /* Reset & Demo Centering Container */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -19,57 +18,51 @@
       justify-content: center;
       background: #090d16;
       color: #f8fafc;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       padding: 24px;
     }
     .demo-label {
       margin-top: 24px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
       color: #94a3b8;
-      letter-spacing: 0.5px;
     }
 
-    /* ======================================================
-       LOADER CSS BLOCK (Self-contained, customize variables)
-       ====================================================== */
 .fun-battery {
-  --size: 60px;
+  --size: 54px;
   --color: #10b981;
   width: var(--size);
   height: calc(var(--size) * 0.45);
   display: flex;
   align-items: center;
-  position: relative;
-  box-sizing: border-box;
 }
 
 .fun-battery-body {
   flex: 1;
   height: 100%;
-  border: 3px solid var(--color);
-  border-radius: 6px;
-  padding: 3px;
+  border: 2px solid var(--color);
+  border-radius: 5px;
+  padding: 2.5px;
   display: flex;
-  gap: 3px;
+  gap: 2.5px;
   box-sizing: border-box;
 }
 
 .fun-battery-tip {
-  width: 4px;
-  height: 45%;
-  background-color: var(--color);
-  border-radius: 0 3px 3px 0;
+  width: 3.5px;
+  height: 40%;
+  background: var(--color);
+  border-radius: 0 2px 2px 0;
   margin-left: 2px;
 }
 
 .fun-battery-cell {
   flex: 1;
   height: 100%;
-  background-color: var(--color);
-  border-radius: 2px;
+  background: var(--color);
+  border-radius: 1.5px;
   opacity: 0.15;
-  animation: funBatteryCharge 1.6s ease-in-out infinite;
+  animation: funBattery 1.6s ease-in-out infinite;
 }
 
 .fun-battery-cell:nth-child(1) { animation-delay: 0s; }
@@ -77,9 +70,9 @@
 .fun-battery-cell:nth-child(3) { animation-delay: 0.6s; }
 .fun-battery-cell:nth-child(4) { animation-delay: 0.9s; }
 
-@keyframes funBatteryCharge {
+@keyframes funBattery {
   0%, 100% { opacity: 0.15; transform: scaleY(0.9); }
-  50% { opacity: 1; transform: scaleY(1); box-shadow: 0 0 6px var(--color); }
+  50% { opacity: 1; transform: scaleY(1); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -92,7 +85,6 @@
   </style>
 </head>
 <body>
-  <!-- Charging Power Cell (Fun Loaders) -->
   <div class="fun-battery" role="status" aria-label="Charging battery">
   <div class="fun-battery-body">
     <div class="fun-battery-cell"></div>
@@ -102,6 +94,6 @@
   </div>
   <div class="fun-battery-tip"></div>
 </div>
-  <p class="demo-label">Charging Power Cell</p>
+  <p class="demo-label">Battery Cell</p>
 </body>
 </html>

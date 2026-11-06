@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Magnetic Pill Slider - Loader Lab</title>
+  <title>Magnetic Pill - Loader Lab</title>
   <style>
-    /* Reset & Demo Centering Container */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -19,29 +18,25 @@
       justify-content: center;
       background: #090d16;
       color: #f8fafc;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       padding: 24px;
     }
     .demo-label {
       margin-top: 24px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
       color: #94a3b8;
-      letter-spacing: 0.5px;
     }
 
-    /* ======================================================
-       LOADER CSS BLOCK (Self-contained, customize variables)
-       ====================================================== */
 .pb-magnetic-pill {
   --size: 240px;
   --color: #10b981;
-  --track: rgba(16, 185, 129, 0.18);
-  --height: 14px;
+  --track: rgba(255, 255, 255, 0.08);
+  --height: 12px;
   width: var(--size);
   max-width: 100%;
   height: var(--height);
-  background-color: var(--track);
+  background: var(--track);
   border-radius: 9999px;
   position: relative;
   padding: 2px;
@@ -49,33 +44,32 @@
 }
 
 .pb-mag-dot {
-  width: 24px;
-  height: 10px;
-  background-color: var(--color);
+  width: 20px;
+  height: 8px;
+  background: var(--color);
   border-radius: 9999px;
-  box-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
-  animation: pbMagneticAnim 1.6s cubic-bezier(0.77, 0, 0.175, 1) infinite alternate;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
+  animation: pbMagnetic 1.5s cubic-bezier(0.77, 0, 0.175, 1) infinite alternate;
 }
 
-@keyframes pbMagneticAnim {
+@keyframes pbMagnetic {
   0% { transform: translateX(0) scaleX(0.9); }
-  50% { transform: translateX(calc(var(--size) / 2 - 14px)) scaleX(1.3); }
-  100% { transform: translateX(calc(var(--size) - 28px)) scaleX(0.9); }
+  50% { transform: translateX(calc(var(--size) / 2 - 12px)) scaleX(1.25); }
+  100% { transform: translateX(calc(var(--size) - 24px)) scaleX(0.9); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .pb-mag-dot {
     animation: none;
-    transform: translateX(calc(var(--size) / 2 - 14px));
+    transform: translateX(calc(var(--size) / 2 - 12px));
   }
 }
   </style>
 </head>
 <body>
-  <!-- Magnetic Pill Slider (Progress Bars) -->
   <div class="pb-magnetic-pill" role="progressbar" aria-label="Magnetic slider">
   <div class="pb-mag-dot"></div>
 </div>
-  <p class="demo-label">Magnetic Pill Slider</p>
+  <p class="demo-label">Magnetic Pill</p>
 </body>
 </html>
